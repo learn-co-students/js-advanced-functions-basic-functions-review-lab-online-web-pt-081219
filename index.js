@@ -20,20 +20,23 @@ let Calculator = {
     divide
 }
 
-function add() {
-    return 1 + 3
+function add(a, b) {
+    return a + b
 }
-function subtract() {
-    return 1 - 3
+function subtract(a, b) {
+    return a - b
 }
-function multiply() {
-    return 1 * 3
+function multiply(a, b) {
+    return a * b
 }
-function divide(){
-    return 10 / 5
+function divide(a, b){
+    return a / b
 }
 
 function actionApplyer(startingInteger, functions) {
-    if (functions.length > 0) return 4
-    return startingInteger;
+    let start = startingInteger;
+    for (const fun of functions) {
+        start = fun(start);
+    }
+    return start;
 }
